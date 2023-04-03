@@ -7,3 +7,8 @@ CREATE TABLE tb_pedidos (
     cliente_id INT,
     carrinho_id INT
 );
+
+INSERT INTO tb_pedidos
+    (pagamento_id, cliente_id, carrinho_id)
+VALUES
+    ('1', '3', '1');
