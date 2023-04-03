@@ -8,3 +8,8 @@ CREATE TABLE tb_carrinho (
     cupons_id INT,
     valor DECIMAL
 );
+
+INSERT INTO tb_carrinho
+    (produto_id, cliente_id, cupons_id, valor)
+VALUES
+    ('2', '5', '2', '799');

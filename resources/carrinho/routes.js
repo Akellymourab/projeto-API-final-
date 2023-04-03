@@ -58,7 +58,7 @@ app.patch(`${BASE_URL}/:id`, async (req, res) => {
 });
 
 app.delete(`${BASE_URL}/:id`, async (req, res) => {
-    await database.execute(`DELETE FROM tb_produto WHERE id='${req.params.id}'`)
+    await database.execute(`DELETE FROM tb_carrinho WHERE id='${req.params.id}'`)
 
     res.sendStatus(204);
 });
