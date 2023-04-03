@@ -1,8 +1,8 @@
 const app = require('express').Router();
 const database = require('../../connection/database');
 
-const TABLE_NAME = 'tb_product';
-const BASE_URL = '/products';
+const TABLE_NAME = 'tb_produto';
+const BASE_URL = '/produtos';
 
 app.get(BASE_URL, async (req, res) => {
     let dados = await database.execute(`SELECT * FROM ${TABLE_NAME}`);
@@ -12,7 +12,7 @@ app.get(BASE_URL, async (req, res) => {
 
 app.get(`${BASE_URL}/:id`, async (req, res) => {
     let dados = await database.execute(`
-        SELECT * FROM tb_banner WHERE id='${req.params.id}'
+        SELECT * FROM tb_produto WHERE id='${req.params.id}'
     `);
 
     res.send(dados[0]);
@@ -22,7 +22,7 @@ app.post(BASE_URL, async (req, res) => {
     let corpo = req.body;
 
     let sql = await database.execute(`
-        INSERT INTO tb_product (nome, descricao, img_id, valor, tamanho, cor, quantidade, referencia, marca_id, estado, colecoes_id, rewies, desconto, categoria_id)
+        INSERT INTO tb_produto (nome, descricao, img_id, valor, tamanho, cor, quantidade, referencia, marca_id, estado, colecoes_id, rewies, desconto, categoria_id)
         VALUES ('${corpo.nome}', '${corpo.descricao}', '${corpo.img_id}', '${corpo.valor}', '${corpo.tamanho}', '${corpo.cor}', '${corpo.quantidade}', '${corpo.referencia}', '${corpo.marca_id}', '${corpo.estado}', '${corpo.colecoes_id}', '${corpo.rewies}', '${corpo.desconto}', '${corpo.categoria_id}')
     `);
 
@@ -35,7 +35,7 @@ app.patch(`${BASE_URL}:id`, async (req, res) => {
     let dados = req.body;
 
     let jaExiste = await database.execute(`
-        SELECT * FROM tb_product WHERE id='${req.params.id}'
+        SELECT * FROM tb_produto WHERE id='${req.params.id}'
     `);
 
     if (undefined === jaExiste[0]) {
@@ -44,7 +44,7 @@ app.patch(`${BASE_URL}:id`, async (req, res) => {
     }
 
     await database.execute(`
-        UPDATE tb_product SET 
+        UPDATE tb_produto SET 
             titulo='${req.body.titulo || jaExiste[0].titulo}',
             descricao='${req.body.descricao || jaExiste[0].descricao}',
             imagem='${req.body.imagem || jaExiste[0].imagem}'
@@ -57,7 +57,7 @@ app.patch(`${BASE_URL}:id`, async (req, res) => {
 });
 
 app.delete(`${BASE_URL}/:id`, async (req, res) => {
-    await database.execute(`DELETE FROM tb_product WHERE id='${req.params.id}'`)
+    await database.execute(`DELETE FROM tb_produto WHERE id='${req.params.id}'`)
 
     res.sendStatus(204);
 });
