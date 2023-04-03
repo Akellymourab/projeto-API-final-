@@ -1,0 +1,20 @@
+CREATE TABLE tb_produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    status INT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_at DATETIME NULL,
+    descricao VARCHAR (255),
+    img_id INT,
+    nome VARCHAR (55),
+    valor DECIMAL,
+    tamanho INT NOT NULL,
+    cor VARCHAR (15),
+    quantidade INT NOT NULL,
+    referencia INT NOT NULL,
+    marca_id INT NOT NULL,
+    estado VARCHAR (5) NOT NULL,
+    colecoes_id INT NOT NULL,
+    rewies INT,
+    desconto INT,
+    categoria_id INT NOT NULL
+);
