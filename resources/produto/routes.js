@@ -31,7 +31,7 @@ app.post(BASE_URL, async (req, res) => {
     res.send(corpo);
 });
 
-app.patch(`${BASE_URL}:id`, async (req, res) => {
+app.patch(`${BASE_URL}/:id`, async (req, res) => {
     let dados = req.body;
 
     let jaExiste = await database.execute(`
@@ -45,9 +45,20 @@ app.patch(`${BASE_URL}:id`, async (req, res) => {
 
     await database.execute(`
         UPDATE tb_produto SET 
-            titulo='${req.body.titulo || jaExiste[0].titulo}',
+            nome='${req.body.nome || jaExiste[0].nome}',
             descricao='${req.body.descricao || jaExiste[0].descricao}',
-            imagem='${req.body.imagem || jaExiste[0].imagem}'
+            img_id='${req.body.img_id || jaExiste[0].img_id}',
+            valor='${req.body.valor || jaExiste[0].valor}',
+            tamanho='${req.body.tamanho || jaExiste[0].tamanho}',
+            cor='${req.body.cor || jaExiste[0].cor}',
+            quantidade='${req.body.quantidade || jaExiste[0].quantidade}',
+            referencia='${req.body.referencia || jaExiste[0].referencia}',
+            marca_id='${req.body.marca_id || jaExiste[0].marca_id}',
+            estado='${req.body.estado || jaExiste[0].estado}',
+            colecoes_id='${req.body.colecoes_id || jaExiste[0].colecoes_id}',
+            rewies='${req.body.rewies || jaExiste[0].rewies}',
+            desconto='${req.body.desconto || jaExiste[0].desconto}',
+            categoria_id='${req.body.categoria_id || jaExiste[0].categoria_id}'
         WHERE id='${req.params.id}'
     `);
 
