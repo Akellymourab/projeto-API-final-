@@ -10,7 +10,7 @@ const cors = require('cors')
 const app = express();
 
 app.use(cors());
-app.use(express.json()); //a cunicação toda vai ser feita em json, ta ligado!?
+app.use(express.json()); //a cunicação toda vai ser feita em json, ta ligado!?   ooooo
 app.use(categoryRoutes);
 app.use(bannerRoutes);
 app.use(marcaRoutes);
@@ -22,3 +22,4 @@ app.listen(8000, () => {
     console.log('--- PRONTO ---')
     console.log('--------------');
 });
+
