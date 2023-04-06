@@ -257,6 +257,7 @@
           <tbody id="tabela_produtos"></tbody>
       </table>
   </section>
+
   </main>
   
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -268,20 +269,86 @@
     <div class="offcanvas-body">
       <form id="formCriar" onsubmit="adicionar()">
         <div class="input-group input-group-dynamic mb-3">
-            <label for="titulo" class="form-label">Título</label>
-            <input type="text" name="titulo" id="titulo" class="form-control">
+            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Nome">
         </div>
         <div class="input-group input-group-dynamic mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <textarea name="descricao" id="descricao" class="form-control"></textarea>
-        </div>
-        <div class="input-group input-group-dynamic mb-3">
-            <input type="file" name="imagem" id="imagem">
+            <input type="text" name="imagem" id="imagem" class="form-control" placeholder="Link da imagem">
         </div>
         <button type="submit" class="btn btn-primary w-100">Enviar</button>
       </form>
     </div>
   </div>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <form id="formMostrar" onsubmit="mostrar()">
+      <div class="card">
+        <div class="card-header">
+          Descrição
+        </div>
+        <div class="card-body">
+          <!-- <blockquote class="blockquote mb-0"> -->
+            <p>A well-known quote, contained in a blockquote element.</p>
+          <!-- </blockquote> -->
+        </div>
+        
+      </div>
+      <br>
+    </form>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Gênero</li>
+      <li class="list-group-item">Feminino</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Valor</li>
+      <li class="list-group-item">299</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Tamanho</li>
+      <li class="list-group-item">38</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Cor</li>
+      <li class="list-group-item">Branco</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Quantidade</li>
+      <li class="list-group-item">8</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Referencia</li>
+      <li class="list-group-item">8554</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Marca</li>
+      <li class="list-group-item">Nike</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Estado</li>
+      <li class="list-group-item">Novo</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Coleção</li>
+      <li class="list-group-item">Casual</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Rewies</li>
+      <li class="list-group-item">4.5</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Desconto</li>
+      <li class="list-group-item">8%</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Categoria</li>
+      <li class="list-group-item">Tenis</li>
+    </ul>
+  </div>
+</div>
 
   <script src="produtos.js"></script>
   <!--   Core JS Files   -->
