@@ -1,17 +1,30 @@
 const express = require('express');
-const cors = require('cors');
-const produtoRoutes = require("./resources/produto/routes");
-const carrinhoRoutes = require("./resources/carrinho/routes");
-const pedidosRoutes = require("./resources/pedidos/routes");
 
+const clientesRouter = require('./resources/clientes/routes');
+const enderecos_clientesRouter = require('./resources/enderecos_clientes/routes');
+const imagens_pg3Router = require('./resources/imagem_pg3/routes');
+
+//iniciando uma aplicacao com express
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-app.use(produtoRoutes);
-app.use(carrinhoRoutes);
-app.use(pedidosRoutes);
+app.use(express.json()); 
 
-app.listen(8000, () => {
-    console.log('ok');
+//Colocando o express para usar o router de categoria
+app.use(clientesRouter);
+app.use(enderecos_clientesRouter);
+app.use(imagens_pg3Router);
+
+app.use((req, res) => {
+    res.status(404).send("Nenhuma rota encontrada")
+})
+
+const PORTA = 8000;
+
+app.listen(PORTA, () => {
+    console.log('-----------');
+    console.log('-- ATIVO --');
+    console.log('-----------');
 });
+
+
+
