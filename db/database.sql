@@ -1,0 +1,2 @@
+CREATE DATABASE drip_storie
+USE drip_storie
