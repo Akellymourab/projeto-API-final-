@@ -2,27 +2,27 @@ const express = require("express");
 const app = express.Router();
 const controller = require("./controller");
 
-app.get("/categories", async (req, res) => {
+app.get("/categorias", async (req, res) => {
     res.send(await controller.listAll());
 })
 
-app.get("/categories/:id", async (req, res) => {
+app.get("/categorias/:id", async (req, res) => {
     res.send(await controller.listOne(req.params.id));
 })
 
-app.post("/categories", async (req, res) => {
+app.post("/categorias", async (req, res) => {
     res.send(await controller.create(req.body));
 })
 
-app.put("/categories/:id", async (req, res) => {
+app.put("/categorias/:id", async (req, res) => {
     res.send(await controller.edit(req.params.id, req.body));
 })
 
-app.patch("/categories/:id", async (req, res) => {
+app.patch("/categorias/:id", async (req, res) => {
     res.send(await controller.disable(req.params.id));
 })
 
-app.delete("/categories/:id", async (req, res) => {
+app.delete("/categorias/:id", async (req, res) => {
     res.send(await controller.destroy(req.params.id));
 })
 

@@ -1,4 +1,4 @@
-const db = require("../../connection/database");
+const db = require("../../connection/databases");
 const table = "tb_category"; 
 
 async function listAll(){

@@ -1,4 +1,4 @@
-const database = require('../../connection/database');
+const database = require('../../connection/databases');
 
 async function buscarUm(id) {
     let dados = await database.execute(`

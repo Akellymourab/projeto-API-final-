@@ -2,7 +2,7 @@
 // const app = express.Router();
 
 const app = require('express').Router();
-const database = require('../../connection/database');
+const database = require('../../connection/databases');
 
 const TABLE_NAME = 'tb_banner';
 const BASE_URL = '/banners';
