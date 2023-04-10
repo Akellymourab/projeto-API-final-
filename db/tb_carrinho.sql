@@ -6,6 +6,9 @@ CREATE TABLE tb_carrinho (
     produto_id INT,
     cliente_id INT,
     cupons_id INT,
+    FOREIGN KEY (produto_id) REFERENCES tb_produto(id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (cupons_id) REFERENCES tb_cupons(id),
     valor DECIMAL
 );
 

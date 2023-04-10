@@ -1,0 +1,10 @@
+CREATE TABLE marca (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20), 
+status INT DEFAULT 1, 
+descricao VARCHAR(50),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+updated_at DATETIME,
+imagem VARCHAR(255) 
+);
+

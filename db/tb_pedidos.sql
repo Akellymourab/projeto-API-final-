@@ -5,7 +5,10 @@ CREATE TABLE tb_pedidos (
     update_at DATETIME NULL,
     pagamento_id INT,
     cliente_id INT,
-    carrinho_id INT
+    carrinho_id INT,
+    FOREIGN KEY (pagamento_id) REFERENCES forma_pagamento(id),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (carrinho_id) REFERENCES tb_carrinho(id)
 );
 
 INSERT INTO tb_pedidos

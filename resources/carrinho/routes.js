@@ -1,5 +1,5 @@
 const app = require('express').Router();
-const database = require('../../connection/database');
+const database = require('../../connection/databases');
 
 const TABLE_NAME = 'tb_carrinho';
 const BASE_URL = '/carrinhos';
